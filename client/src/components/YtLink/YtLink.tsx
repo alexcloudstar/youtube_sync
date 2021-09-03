@@ -35,15 +35,6 @@ const YtLink: React.FC<YtLinkProps> = ({ ytVideoId, setVideoId }) => {
 	return (
 		<YtLinkWrapper>
 			<form onSubmit={(e) => e.preventDefault()}>
-				{showYoutubeInput && (
-					<TextField
-						type="text"
-						value={youtubeLinkInput}
-						placeholder="Please input your youtube link"
-						onChange={onChange}
-					/>
-				)}
-
 				<Button
 					variant="contained"
 					color="secondary"
@@ -52,6 +43,14 @@ const YtLink: React.FC<YtLinkProps> = ({ ytVideoId, setVideoId }) => {
 				>
 					{showYoutubeInput ? 'Hide input' : 'Show input'}
 				</Button>
+				{showYoutubeInput && (
+					<TextField
+						type="text"
+						value={youtubeLinkInput}
+						placeholder="Please input your youtube link"
+						onChange={onChange}
+					/>
+				)}
 			</form>
 		</YtLinkWrapper>
 	);
