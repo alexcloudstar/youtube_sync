@@ -3,8 +3,9 @@
 ## How to start:
 
 **Pull repository via ssh/https**
-ssh(recommended): git pull git@github.com:alexcloudstar/yt-sync.git
-https: git pull https://github.com/alexcloudstar/yt-sync.git
+<br/>
+<br/> ssh(recommended): `git pull git@github.com:alexcloudstar/yt-sync.git` <br/>
+https: `git pull https://github.com/alexcloudstar/yt-sync.git`
 
 **Steps to install and run the project**
 **Server**: cd server and run yarn or npm install and therefore yarn/npm start
