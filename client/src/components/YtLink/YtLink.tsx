@@ -8,12 +8,13 @@ import { Button, TextField } from '@material-ui/core';
 
 const socket = io('http://localhost:4000');
 
-const YtLink: React.FC<YtLinkProps> = ({ ytVideoId, setVideoId }) => {
+const YtLink: React.FC<YtLinkProps> = ({ isOwner, setVideoId }) => {
 	const [youtubeLinkInput, setYoutubeLinkInput] = useState<string>('');
 	const [showYoutubeInput, setShowYoutubeInput] = useState<boolean>(true);
 
 	const onChange = (e) => {
 		setYoutubeLinkInput(e.target.value);
+
 		let video_id = e.target.value.split('v=')[1];
 
 		const ampersandPosition = video_id?.indexOf('&');
@@ -30,7 +31,7 @@ const YtLink: React.FC<YtLinkProps> = ({ ytVideoId, setVideoId }) => {
 		setShowYoutubeInput(!showYoutubeInput);
 	};
 
-	if (!checkOwnership()) return <></>;
+	if (!checkOwnership(isOwner)) return <></>;
 
 	return (
 		<YtLinkWrapper>

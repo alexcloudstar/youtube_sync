@@ -1,13 +1,15 @@
 import { getLocalStorage } from './localStorage';
 
-export const checkOwnership = (): boolean => {
-	const isOwner = getLocalStorage('isOwner');
+export const checkOwnership = (isOwnerArg: boolean): boolean => {
+	const isOwner: boolean | string = isOwnerArg || getLocalStorage('isOwner');
 
 	if (isOwner === null) {
 		return null;
 	}
 
-	if (isOwner !== null) {
+	if (isOwner !== null && typeof isOwner === 'string') {
 		return JSON.parse(isOwner);
 	}
+
+	return !!isOwner;
 };

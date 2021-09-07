@@ -22,4 +22,8 @@ io.on('connect', socket => {
   socket.on('isVideoPlaying', data => {
     socket.broadcast.emit('setIsVideoPlaying', data);
   });
+
+  socket.on('secondsPlaying', data => {
+    socket.broadcast.emit('setSecondsPlaying', data);
+  });
 });

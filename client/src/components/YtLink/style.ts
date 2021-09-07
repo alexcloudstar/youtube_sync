@@ -12,6 +12,6 @@ export const YtLinkWrapper = styled.div`
 		width: 220px;
 	}
 	.MuiButton-root {
-		margin-left: 20px;
+		margin-right: 20px;
 	}
 `;

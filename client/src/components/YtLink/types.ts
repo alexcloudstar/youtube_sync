@@ -1,4 +1,4 @@
 export type YtLinkProps = {
-	ytVideoId: string;
+	isOwner: boolean;
 	setVideoId: React.Dispatch<React.SetStateAction<string>>;
 };

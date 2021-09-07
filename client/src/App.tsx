@@ -11,10 +11,12 @@ const App = (): JSX.Element => {
 	const [ytVideoId, setVideoId] = useState<string>(
 		getLocalStorage('videoLink')
 	);
+	const [isOwner, setIsOwner] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (getLocalStorage('isOwner') === null) {
 			setLocalStorage('isOwner', 'true');
+			setIsOwner(true);
 			socket.emit('ownerExist', true);
 		}
 
@@ -40,9 +42,9 @@ const App = (): JSX.Element => {
 			<Typography variant="h5" component="h5">
 				Youtube Sync
 			</Typography>
-			<OwnershipStatus />
-			<YtLink ytVideoId={ytVideoId} setVideoId={setVideoId} />
-			<Video ytVideoId={ytVideoId} />
+			<OwnershipStatus isOwner={isOwner} />
+			<YtLink isOwner={isOwner} setVideoId={setVideoId} />
+			<Video isOwner={isOwner} ytVideoId={ytVideoId} />
 		</>
 	);
 };

@@ -1,3 +1,3 @@
 export type OwnershipStatusProps = {
-	props?: unknown;
+	isOwner: boolean;
 };
